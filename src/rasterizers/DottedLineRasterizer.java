@@ -1,4 +1,4 @@
-package rasterizers;
+/*package rasterizers;
 
 import models.Line;
 import models.Point;
@@ -97,4 +97,4 @@ public class DottedLineRasterizer implements Rasterizer
     {
         return p.getY()-(k*p.getX());
     }
-}
+}*/

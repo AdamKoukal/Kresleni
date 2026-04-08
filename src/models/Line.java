@@ -1,26 +1,34 @@
 package models;
 
+import rasterizers.LineRasterizer;
+
 import java.awt.*;
 
-public class Line
+public class Line extends Shape
 {
     private Point p1;
     private Point p2;
-    private Color color= Color.CYAN;
 
-    private boolean isDotted = false;
 
-    public Line(Point p1, Point p2)
+    private LineStyle lineStyle = LineStyle.Normal;
+
+    private int LineWidth=1;
+
+    public Line(Point p1, Point p2, Color color,int lineWidth)
     {
         this.p1 = p1;
         this.p2 = p2;
+        this.color=color;
+        this.LineWidth=lineWidth;
     }
 
-    public Line(Point p1, Point p2, boolean isDotted)
+    public Line(Point p1, Point p2,Color color,int lineWidth, LineStyle lineStyle)
     {
         this.p1 = p1;
         this.p2 = p2;
-        this.isDotted = isDotted;
+        this.lineStyle = lineStyle;
+        this.LineWidth=lineWidth;
+        this.color=color;
     }
 
     public Point getP1()
@@ -43,9 +51,24 @@ public class Line
         this.p2 = p2;
     }
 
-    public boolean getIsDotted()
+    public LineStyle getStyle()
     {
-        return isDotted;
+        return lineStyle;
     }
 
+    public int getLineWidth()
+    {
+        return LineWidth;
+    }
+    public Color getColor()
+    {
+        return color;
+    }
+
+    @Override
+    public void draw()
+    {
+        LineRasterizer lineRasterizer=new LineRasterizer(this.color,raster);
+        lineRasterizer.rasterize(this);
+    }
 }

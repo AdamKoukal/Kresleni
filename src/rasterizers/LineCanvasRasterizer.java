@@ -1,7 +1,7 @@
-package rasterizers;
+/*package rasterizers;
 
 import models.Line;
-import models.LineCanvas;
+import models.Canvas;
 
 public class LineCanvasRasterizer
 {
@@ -14,9 +14,9 @@ public class LineCanvasRasterizer
         this.dottedLineRasterizer=dottedLineRasterizer;
     }
 
-    public void rasterizeLineCanvas(LineCanvas lineCanvas)
+    public void rasterizeLineCanvas(Canvas canvas)
     {
-        for(Line line: lineCanvas.getLines())
+        for(Line line: canvas.getLines())
         {
             if(line.getIsDotted()==false)
             {
@@ -29,4 +29,4 @@ public class LineCanvasRasterizer
 
         }
     }
-}
+}*/
